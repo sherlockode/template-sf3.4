@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  deploy-staging:
+  build:
     docker:
       - image: ruby:2.3.3-alpine
     working_directory: ~/repo
@@ -17,7 +17,7 @@ workflows:
   version: 2
   deploy-staging:
     jobs:
-      - deploy-staging:
+      - build:
           filters:
             branches:
               only: develop
